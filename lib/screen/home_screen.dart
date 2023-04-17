@@ -45,49 +45,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 left: 25,
                 right: 25,
               ),
-              child: Form(
-                key: _formkey,
-                child: TextFormField(
-                  validator: (value) =>
-                      value!.isEmpty ? 'Please Enter a location' : null,
-                  controller: _locationName,
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      icon: const Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
-                      onPressed: () async {
-                        _formkey.currentState!.validate();
-                        final inputedtext = _locationName.text;
-                        var dataresult = await getdetails(
-                          location: inputedtext,
-                        );
-                        _locationName.clear();
-                        isstart = false;
-                        FocusManager.instance.primaryFocus?.unfocus();
-                        setState(
-                          () {
-                            _weatherResponse = dataresult;
-                          },
-                        );
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            TextFormField(
+              validator: (value) =>
+                  value!.isEmpty ? 'Please Enter a location' : null,
+              controller: _locationName,
+              decoration: InputDecoration(
+                suffixIcon: IconButton(
+                  icon: const Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  onPressed: () async {
+                    _formkey.currentState!.validate();
+                    final inputedtext = _locationName.text;
+                    var dataresult = await getdetails(
+                      location: inputedtext,
+                    );
+                    _locationName.clear();
+                    isstart = false;
+                    FocusManager.instance.primaryFocus?.unfocus();
+                    setState(
+                      () {
+                        _weatherResponse = dataresult;
                       },
-                    ),
-                    fillColor: Colors.grey,
-                    hintText: 'Search Your Location',
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          30,
-                        ),
-                      ),
+                    );
+                  },
+                ),
+                fillColor: Colors.grey,
+                hintText: 'Search Your Location',
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      30,
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 100,
             ),
             SizedBox(
               width: width * 0.4,
