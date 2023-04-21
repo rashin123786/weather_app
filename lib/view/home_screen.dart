@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/api/api.dart';
-import '../constants/constants.dart';
-import '../model/weather_response.dart';
-import '../widgets/details_location.dart';
+import 'package:weather_app/controller/api.dart';
+import 'package:weather_app/controller/constants/constants.dart';
+import 'package:weather_app/model/weather_response.dart';
+import 'package:weather_app/view/widgets/details_location.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

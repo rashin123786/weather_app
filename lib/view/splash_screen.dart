@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:weather_app/screen/home_screen.dart';
+import 'package:weather_app/view/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -43,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
     }
 
     Navigator.of(context).pushReplacement(MaterialPageRoute(
-      builder: (context) => const HomeScreen(),
+      builder: (context) => HomeScreen(),
     ));
   }
 }

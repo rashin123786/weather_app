@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/constants/constants.dart';
+import 'package:weather_app/controller/constants/constants.dart';
 
 class DetailsLocation extends StatelessWidget {
   const DetailsLocation({
